@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Naomii01/ContactApp.git/static/css/main.971b06a6.css",
+    "main.js": "/Naomii01/ContactApp.git/static/js/main.7774ed95.js",
+    "static/js/453.c91d54fa.chunk.js": "/Naomii01/ContactApp.git/static/js/453.c91d54fa.chunk.js",
+    "static/media/redux.cjs": "/Naomii01/ContactApp.git/static/media/redux.7edfc461ab353f1712ab.cjs",
+    "index.html": "/Naomii01/ContactApp.git/index.html",
+    "main.971b06a6.css.map": "/Naomii01/ContactApp.git/static/css/main.971b06a6.css.map",
+    "main.7774ed95.js.map": "/Naomii01/ContactApp.git/static/js/main.7774ed95.js.map",
+    "453.c91d54fa.chunk.js.map": "/Naomii01/ContactApp.git/static/js/453.c91d54fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.971b06a6.css",
+    "static/js/main.7774ed95.js"
+  ]
+}
