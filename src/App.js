@@ -1,6 +1,5 @@
 import React from 'react';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import BrowserRouter
 import { ToastContainer } from 'react-toastify';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -9,19 +8,17 @@ import EditContact from './components/EditContact';
 
 const App = () => {
   return (
-    <div className="App">
-      <ToastContainer/>
-      <Navbar/>
-      <Switch>
-        <Route exact path='/' component= {()=><Home/>}/>
-        <Route path='/add'>
-    <AddContact></AddContact>
-        </Route>
-        <Route path='/edit/:id'>
-       <EditContact/>
-        </Route>
-      </Switch>
-    </div>
+    <Router> {/* Wrap your routes with BrowserRouter */}
+      <div className="App">
+        <ToastContainer/>
+        <Navbar/>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/add' component={AddContact} /> {/* Use component prop directly */}
+          <Route path='/edit/:id' component={EditContact} /> {/* Use component prop directly */}
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

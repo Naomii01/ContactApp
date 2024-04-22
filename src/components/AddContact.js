@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const AddContact = () => {
     const [name, setName] = useState("");
@@ -10,47 +10,43 @@ const AddContact = () => {
     const [picture, setPicture] = useState("");
 
     const contacts = useSelector((state) => state);
-    const dispatch = useDispatch ();
-    const history = useHistory ();
-    
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const checkEmail = contacts.find(
-            (contact)=> contact.email === email && contact
-    );
-    const checkNumber = contacts.find(
-        (contact)=> contact.number === parseInt (number)
-); 
-
-
+            (contact) => contact.email === email && contact
+        );
+        const checkNumber = contacts.find(
+            (contact) => contact.number === parseInt(number)
+        );
 
         if (!email || !number || !name || !picture) {
             return toast.warning("Please fill in all fields!");
         }
-        if (checkEmail){
+        if (checkEmail) {
             return toast.error("This email already Exists!");
-
         }
-        if (checkNumber){
+        if (checkNumber) {
             return toast.error("This number already Exists!");
-
         }
+
+        const id = contacts.length > 0 ? contacts[contacts.length - 1].id + 1 : 1;
 
         const data = {
-            id: contacts[contacts.length -1].id + 1,
+            id,
             name,
             email,
             number,
             picture,
-        }
-       dispatch ({type: "ADD_CONTACT", payload:data});
-       toast.success (" Contact added successfully!!");
-       history.push("/");
+        };
+        dispatch({ type: "ADD_CONTACT", payload: data });
+        toast.success("Contact added successfully!!");
+        history.push("/");
     };
 
-    
-  
     return (
         <div className="container">
             <div className="row">
@@ -128,7 +124,7 @@ const AddContact = () => {
                             </button>
                         </div>
                     </form>
-                </div>
+                </div>center
             </div>
         </div>
     );
